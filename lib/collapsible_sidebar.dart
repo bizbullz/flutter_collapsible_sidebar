@@ -182,13 +182,8 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topLeft,
+    return Row(
       children: [
-        Padding(
-          padding: EdgeInsets.only(left: widget.minWidth * 1.1),
-          child: widget.body,
-        ),
         Padding(
           padding: EdgeInsets.all(widget.screenPadding),
           child: GestureDetector(
@@ -251,6 +246,7 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
             ),
           ),
         ),
+        Expanded(child: widget.body)
       ],
     );
   }
